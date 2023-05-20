@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th =  "http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"  layout:decorate="mainLayout.html">
+<div layout:fragment="siteContent">
+    <div>
+        <table class="table m-4 mb-5">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NAME</th>
+                <th scope="col">SURNAME</th>
+                <th scope="col">EXAM</th>
+                <th scope="col-2">MARK</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="student : ${allStudents}" th:style="${student.getExam()<50?'color: red;':''}">
+                <td th:text="${student.getId()}"></td>
+                <td th:text="${student.getName()}"></td>
+                <td th:text="${student.getSurname()}"></td>
+                <td th:text="${student.getExam()}"></td>
+                <td th:text="${student.getMark()}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</html>

@@ -1,0 +1,239 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 134217728 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3527), pid=5128, tid=5584
+#
+# JRE version:  (19.0.1+10) (build )
+# Java VM: OpenJDK 64-Bit Server VM (19.0.1+10-21, mixed mode, emulated-client, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dij.spring.boot.application.process=d3e67410-3cc0-493e-b232-ae0c51fb827f -Dmanagement.endpoints.jmx.exposure.include=* -Dspring.application.admin.enabled=true -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.output.ansi.enabled=always -XX:TieredStopAtLevel=1 -Dcom.sun.management.jmxremote -Dfile.encoding=windows-1251 -Duser.country=RU -Duser.language=ru -Duser.variant kz.bitlab.springboot.JavaSpringTask31.JavaSpringTask31Application
+
+Host: Intel(R) Core(TM) i7-3630QM CPU @ 2.40GHz, 8 cores, 7G,  Windows 7 , 64 bit Build 7601 (6.1.7601.24565)
+Time: Sat May 20 13:22:17 2023  Windows 7 , 64 bit Build 7601 (6.1.7601.24565) elapsed time: 0.006433 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000000288140):  JavaThread "Unknown thread" [_thread_in_vm, id=5584, stack(0x0000000002100000,0x0000000002200000)]
+
+Stack: [0x0000000002100000,0x0000000002200000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6ee8fa]
+V  [jvm.dll+0x857a1e]
+V  [jvm.dll+0x85940e]
+V  [jvm.dll+0x859ac3]
+V  [jvm.dll+0x28291f]
+V  [jvm.dll+0x6eb6e9]
+V  [jvm.dll+0x6e028a]
+V  [jvm.dll+0x357136]
+V  [jvm.dll+0x35eb96]
+V  [jvm.dll+0x3b555e]
+V  [jvm.dll+0x3b578f]
+V  [jvm.dll+0x32c6ea]
+V  [jvm.dll+0x32d59e]
+V  [jvm.dll+0x821b20]
+V  [jvm.dll+0x3c27c1]
+V  [jvm.dll+0x8022f1]
+V  [jvm.dll+0x44b30f]
+V  [jvm.dll+0x44cc91]
+C  [jli.dll+0x5287]
+C  [ucrtbase.DLL+0x214c2]
+C  [kernel32.dll+0x155dd]
+C  [ntdll.dll+0x52b1d]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000007fee980d048, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000000002bfba0 WorkerThread "GC Thread#0" [stack: 0x0000000012d90000,0x0000000012e90000] [id=7560]
+  0x0000000012c11850 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000000013020000,0x0000000013120000] [id=7036]
+  0x0000000012c12d50 WorkerThread "G1 Conc#0" [stack: 0x0000000013270000,0x0000000013370000] [id=6952]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000007fee8fcd127]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000000000283ef0] Heap_lock - owner thread: 0x0000000000288140
+
+Heap address: 0x0000000081c00000, size: 2020 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000081c00000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000007fee93d6959]
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.004 Loaded shared library C:\Users\Miras\.jdks\openjdk-19.0.1\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x000000013f690000 - 0x000000013f69e000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\java.exe
+0x0000000077aa0000 - 0x0000000077c3f000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000077880000 - 0x00000000779a0000 	C:\Windows\system32\kernel32.dll
+0x000007fefd610000 - 0x000007fefd677000 	C:\Windows\system32\KERNELBASE.dll
+0x000007feebc60000 - 0x000007feebc77000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\jli.dll
+0x000007fefbbf0000 - 0x000007fefbde5000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.24483_none_e372d88f30fbb845\COMCTL32.dll
+0x000007fefe240000 - 0x000007fefe2df000 	C:\Windows\system32\msvcrt.dll
+0x000007fefe5b0000 - 0x000007fefe618000 	C:\Windows\system32\GDI32.dll
+0x00000000779a0000 - 0x0000000077a9b000 	C:\Windows\system32\USER32.dll
+0x000007fefe620000 - 0x000007fefe62e000 	C:\Windows\system32\LPK.dll
+0x000007fefe740000 - 0x000007fefe80b000 	C:\Windows\system32\USP10.dll
+0x000007feff680000 - 0x000007feff6f1000 	C:\Windows\system32\SHLWAPI.dll
+0x000007feeb7a0000 - 0x000007feeb7bb000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\VCRUNTIME140.dll
+0x000007feebc50000 - 0x000007feebc54000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\api-ms-win-crt-runtime-l1-1-0.dll
+0x000007fee9ff0000 - 0x000007feea0f0000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\ucrtbase.DLL
+0x000007feebcc0000 - 0x000007feebcc3000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\api-ms-win-core-localization-l1-2-0.dll
+0x000007feeb430000 - 0x000007feeb433000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\api-ms-win-core-processthreads-l1-1-1.dll
+0x000007feeb8e0000 - 0x000007feeb8e3000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\api-ms-win-core-file-l1-2-0.dll
+0x000007feea4b0000 - 0x000007feea4b3000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\api-ms-win-core-timezone-l1-1-0.dll
+0x000007fee9fe0000 - 0x000007fee9fe3000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\api-ms-win-core-file-l2-1-0.dll
+0x000007fee9fd0000 - 0x000007fee9fd3000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\api-ms-win-core-synch-l1-2-0.dll
+0x000007fee9fc0000 - 0x000007fee9fc3000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\api-ms-win-crt-heap-l1-1-0.dll
+0x000007fee9fa0000 - 0x000007fee9fa4000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\api-ms-win-crt-string-l1-1-0.dll
+0x000007fee9f90000 - 0x000007fee9f94000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\api-ms-win-crt-stdio-l1-1-0.dll
+0x000007fee9da0000 - 0x000007fee9da4000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\api-ms-win-crt-convert-l1-1-0.dll
+0x000007fee9d90000 - 0x000007fee9d93000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\api-ms-win-crt-environment-l1-1-0.dll
+0x000007fee9d80000 - 0x000007fee9d83000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\api-ms-win-crt-filesystem-l1-1-0.dll
+0x000007fee9d70000 - 0x000007fee9d75000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\api-ms-win-crt-math-l1-1-0.dll
+0x000007fee9d60000 - 0x000007fee9d63000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\api-ms-win-crt-locale-l1-1-0.dll
+0x000007fefdc60000 - 0x000007fefdc8e000 	C:\Windows\system32\IMM32.DLL
+0x000007fefe630000 - 0x000007fefe73b000 	C:\Windows\system32\MSCTF.dll
+0x000007fefd510000 - 0x000007fefd554000 	C:\Windows\system32\nvinitx.dll
+0x000007feff5a0000 - 0x000007feff67b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefdda0000 - 0x000007fefddbf000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefdb30000 - 0x000007fefdc5c000 	C:\Windows\system32\RPCRT4.dll
+0x000007fee9d50000 - 0x000007fee9d5c000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\vcruntime140_1.dll
+0x000007fee9cc0000 - 0x000007fee9d4e000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\msvcp140.dll
+0x000007fee9cb0000 - 0x000007fee9cb3000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\api-ms-win-crt-time-l1-1-0.dll
+0x000007fee9ca0000 - 0x000007fee9ca3000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\api-ms-win-crt-utility-l1-1-0.dll
+0x000007fee8c90000 - 0x000007fee9950000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\server\jvm.dll
+0x000007feece50000 - 0x000007feece59000 	C:\Windows\system32\WSOCK32.dll
+0x000007fefe170000 - 0x000007fefe1bd000 	C:\Windows\system32\WS2_32.dll
+0x000007fefdd30000 - 0x000007fefdd38000 	C:\Windows\system32\NSI.dll
+0x000007fef9ff0000 - 0x000007fefa02b000 	C:\Windows\system32\WINMM.dll
+0x000007fefc640000 - 0x000007fefc64c000 	C:\Windows\system32\VERSION.dll
+0x000007fee9c90000 - 0x000007fee9c9a000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\jimage.dll
+0x000007feecb90000 - 0x000007feeccb5000 	C:\Windows\system32\DBGHELP.DLL
+0x000007fee9c60000 - 0x000007fee9c86000 	C:\Users\Miras\.jdks\openjdk-19.0.1\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\Miras\.jdks\openjdk-19.0.1\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.24483_none_e372d88f30fbb845;C:\Users\Miras\.jdks\openjdk-19.0.1\bin\server
+
+VM Arguments:
+jvm_args: -Dij.spring.boot.application.process=d3e67410-3cc0-493e-b232-ae0c51fb827f -Dmanagement.endpoints.jmx.exposure.include=* -Dspring.application.admin.enabled=true -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.output.ansi.enabled=always -XX:TieredStopAtLevel=1 -Dcom.sun.management.jmxremote -Dfile.encoding=windows-1251 -Duser.country=RU -Duser.language=ru -Duser.variant 
+java_command: kz.bitlab.springboot.JavaSpringTask31.JavaSpringTask31Application
+java_class_path (initial): C:\Users\Miras\IdeaProjects\JavaSpringTask3-1\build\classes\java\main;C:\Users\Miras\IdeaProjects\JavaSpringTask3-1\build\resources\main;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-thymeleaf\3.0.7\cdf465d29c9549bc7c215e890717bbbf64510bf1\spring-boot-starter-thymeleaf-3.0.7.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-web\3.0.7\6fd83cc63305158f43e1ccb5d218cb64a5a07306\spring-boot-starter-web-3.0.7.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\nz.net.ultraq.thymeleaf\thymeleaf-layout-dialect\3.2.1\526f2e950a4d67ea49198f9ea5b4ec303ed002c2\thymeleaf-layout-dialect-3.2.1.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-json\3.0.7\31f75f791f960d75e4792124ddf6e67763ebb4a8\spring-boot-starter-json-3.0.7.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter\3.0.7\5fe8a6a2e71bbfce6ab717214bb8b7d0e726ccda\spring-boot-starter-3.0.7.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.thymeleaf\thymeleaf-spring6\3.1.1.RELEASE\deb52ef921a4ac5132fedb7ebfc2bc1dad4382b3\thymeleaf-spring6-3.1.1.RELEASE.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-tomcat\3.0.7\b2c4286c147c72cb3885981911128dd79ebb59c2\spring-boot-starter-tomcat-3.0.7.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.springframework\spring-webmvc\6.0.9\e127c07a23403832d0c6292f4a0bf8c7a2b7329f\spring-webmvc-6.0.9.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.springframework\spring-web\6.0.9\2837dec8a75ecfdad367d6c30ce9cbdfc89caa7a\spring-web-6.0.9.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\nz.net.ultraq.groovy\groovy-extensions\2.1.0\c869dc033867e8861957ff3ff4e1ce0a00260e3a\groovy-extensions-2.1.0.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\nz.net.ultraq.thymeleaf\thymeleaf-expression-processor\3.1.1\81360e5289e8b4551733708c0ef11799d2716e54\thymeleaf-expression-processor-3.1.1.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.thymeleaf\thymeleaf\3.1.1.RELEASE\374a129dfa5e7d7f1a46eacc4d49e594ca0cf26f\thymeleaf-3.1.1.RELEASE.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-logging\3.0.7\df7589cb2aa1aa85383c8cb213ab02a87eb6ad4\spring-boot-starter-logging-3.0.7.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-classic\1.4.7\307944865579a6d490e6a4cbb5082dc8f36536ca\logback-classic-1.4.7.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-to-slf4j\2.19.0\30f4812e43172ecca5041da2cb6b965cc4777c19\log4j-to-slf4j-2.19.0.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.slf4j\jul-to-slf4j\2.0.7\a48f44aeaa8a5ddc347007298a28173ac1fbbd8b\jul-to-slf4j-2.0.7.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\2.0.7\41eb7184ea9d556f23e18b5cb99cad1f8581fc00\slf4j-api-2.0.7.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.apache.groovy\groovy\4.0.12\981e18b87ec2100a05eeb7a47caf030dfde5f3d9\groovy-4.0.12.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-autoconfigure\3.0.7\fbc10086bb6d89e1e1d345ba4dbdd4917bc52362\spring-boot-autoconfigure-3.0.7.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot\3.0.7\7e31cd733c6469feaefb32a5dd473e096967eb16\spring-boot-3.0.7.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\jakarta.annotation\jakarta.annotation-api\2.1.1\48b9bda22b091b1f48b13af03fe36db3be6e1ae3\jakarta.annotation-api-2.1.1.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.springframework\spring-context\6.0.9\be88c57829b9ec038774b47c241ac45673352a55\spring-context-6.0.9.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.springframework\spring-aop\6.0.9\8c1025bf9c1dc66f5268639866b5a45ed9bc62ef\spring-aop-6.0.9.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.springframework\spring-beans\6.0.9\745619eee32c8ead88a21c97748d2416f1db8dd9\spring-beans-6.0.9.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.springframework\spring-expression\6.0.9\f50a1df7ed038ee7ca85528aff652cef4ff4883b\spring-expression-6.0.9.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.springframework\spring-core\6.0.9\284ed111fa0b49b29f6fea6ac0afa402b809e427\spring-core-6.0.9.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.yaml\snakeyaml\1.33\2cd0a87ff7df953f810c344bdf2fe3340b954c69\snakeyaml-1.33.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.datatype\jackson-datatype-jsr310\2.14.3\35f7f751c3555dadccb6f173f9ac1e035a648da3\jackson-datatype-jsr310-2.14.3.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.module\jackson-module-parameter-names\2.14.3\fa8f81ea27d89cf73539bbc72c6304a30bcab631\jackson-module-parameter-names-2.14.3.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.14.3\b49701acb02b8e95ae1967821cfbafc220cf5795\jackson-annotations-2.14.3.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.14.3\4fa101f81504ed6811bf1823270adb51a9b45ff3\jackson-core-2.14.3.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.datatype\jackson-datatype-jdk8\2.14.3\9474ab543a65867461f8326c8fa0494b3efc761\jackson-datatype-jdk8-2.14.3.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.14.3\ba0373b04bf0f03b0cd268cd2e5e8444aaaf9208\jackson-databind-2.14.3.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-websocket\10.1.8\7abb8ab966dd135924c8e69cb2f1db735dee5f23\tomcat-embed-websocket-10.1.8.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-core\10.1.8\ec4b884806c65c80c86bb3db134f6f6f99e79ed8\tomcat-embed-core-10.1.8.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-el\10.1.8\6f3a4ae2ae37270eeb6e9bec4e7207facdc9e8fa\tomcat-embed-el-10.1.8.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\io.micrometer\micrometer-observation\1.10.7\69f51c7bdcf90e45d3f2dfa957b35dfe892b7466\micrometer-observation-1.10.7.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\ognl\ognl\3.3.4\1904789bdd96f226ad252a02f230be1015f4462b\ognl-3.3.4.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.attoparser\attoparser\2.0.6.RELEASE\8f603f22a18d4f7258f8860ccbb68b069f49904a\attoparser-2.0.6.RELEASE.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.unbescape\unbescape\1.1.6.RELEASE\7b90360afb2b860e09e8347112800d12c12b2a13\unbescape-1.1.6.RELEASE.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.springframework\spring-jcl\6.0.9\88d9ddfc6bbbf4047c2a8de8de94a425b06f636a\spring-jcl-6.0.9.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\io.micrometer\micrometer-commons\1.10.7\9c90b47bd3ef6758301f1882506acc332fa27329\micrometer-commons-1.10.7.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.javassist\javassist\3.29.0-GA\d3959fa7e00bf04dbe519228a23213d2afb625d8\javassist-3.29.0-GA.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-core\1.4.7\a2948dae4013d0e9486141b4d638d8951becb767\logback-core-1.4.7.jar;C:\Users\Miras\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-api\2.19.0\ea1b37f38c327596b216542bc636cfdc0b8036fa\log4j-api-2.19.0.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 134217728                                 {product} {ergonomic}
+     bool ManagementServer                         = true                                      {product} {command line}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2118123520                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 0                                      {pd product} {ergonomic}
+     bool ProfileInterpreter                       = false                                  {pd product} {command line}
+    uintx ProfiledCodeHeapSize                     = 0                                      {pd product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 2118123520                             {manageable} {ergonomic}
+     intx TieredStopAtLevel                        = 1                                         {product} {command line}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Git\cmd
+USERNAME=Miras
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+TMP=C:\Users\Miras\AppData\Local\Temp
+TEMP=C:\Users\Miras\AppData\Local\Temp
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 7 , 64 bit Build 7601 (6.1.7601.24565)
+OS uptime: 5 days 16:31 hours
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 58 stepping 9 microcode 0x0, cx8, cmov, fxsr, ht, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, tsc, tscinvbit, avx, aes, erms, clmul, vzeroupper, clflush, rdtscp
+
+Memory: 4k page, system-wide physical 8077M (639M free)
+TotalPageFile size 10123M (AvailPageFile size 12M)
+current process WorkingSet (physical memory assigned to process): 12M, peak: 12M
+current process commit charge ("private bytes"): 63M, peak: 189M
+
+vm_info: OpenJDK 64-Bit Server VM (19.0.1+10-21) for windows-amd64 JRE (19.0.1+10-21), built on 2022-09-14T12:45:06Z by "mach5one" with MS VC++ 17.1 (VS2022)
+
+END.
